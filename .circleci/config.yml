@@ -1,0 +1,29 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: hesto2/aws-terraform-node12:latest
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Test
+          command: yarn test
+      - run:
+          name: Build
+          command: yarn build
+      - run:
+          name: Publish package
+          command: cd ./dist && sh ../node_modules/.bin/npm-publish
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          context: hesto2-npm
+          filters:
+            branches:
+              only: master

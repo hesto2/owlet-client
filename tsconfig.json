@@ -1,0 +1,11 @@
+{
+  "extends": "./node_modules/@hesto2/config/tsconfig.json",
+  "include": ["src/**/*", "src/*"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "resolveJsonModule": true,
+    "sourceMap": false,
+    "declaration": true
+  },
+  "exclude": ["**/*.test.ts"]
+}

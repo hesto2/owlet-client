@@ -1,0 +1,37 @@
+{
+  "name": "owlet-client",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "carter.hesterman <hestermancarter@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/hesto2/owlet-client",
+  "devDependencies": {
+    "@hesto2/config": "^0.0.28",
+    "@types/jest": "^25.2.3",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "ts-jest": "^26.0.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "watch": "yarn cross-env NODE-ENV=development nodemon -e ts --exec ts-node ./src/index.ts",
+    "test": "jest ./src",
+    "prebuild": "rm -rf ./dist/; mkdir ./dist",
+    "build": "tsc && cp package.json ./dist && cp README.md ./dist"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0"
+  }
+}
