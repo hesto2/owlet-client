@@ -42,7 +42,7 @@ export interface DeviceProperty {
 }
 
 export interface OwletSmartSockDevice {
-  baseStationOn: boolean;
+  baseStationOn: 0 | 1;
   batteryLevel: number;
   chargeStatus: 0 | 1 | 2;
   heartRate: number;
