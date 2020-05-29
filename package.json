@@ -1,6 +1,6 @@
 {
   "name": "owlet-client",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "carter.hesterman <hestermancarter@gmail.com>",
   "license": "MIT",
