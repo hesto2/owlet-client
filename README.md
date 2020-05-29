@@ -1,6 +1,6 @@
 # Owlet Client
 
-Lightweight package for interacting with owlet's smart sock api. Note that this
+Unofficial package for interacting with owlet's smart sock api. Note that this
 only works in the US. If you want to use this and are in a different country,
 create an issue and I will implement support for other regions.
 
