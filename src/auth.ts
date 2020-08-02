@@ -20,14 +20,23 @@ const googleLogin = async (
 ): Promise<string> => {
   try {
     const url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCsDZ8kWxQuLJAMVnmEhEkayH1TSxKXfGA`;
-    const result = await axios.post(url, {
-      email,
-      password,
-      returnSecureToken: true,
-    });
+    const result = await axios.post(
+      url,
+      {
+        email,
+        password,
+        returnSecureToken: true,
+      },
+      {
+        headers: {
+          'X-Android-Package': 'com.owletcare.owletcare',
+          'X-Android-Cert': '2A3BC26DB0B8B0792DBE28E6FFDC2598F9B12B74',
+        },
+      }
+    );
     return result.data.idToken;
   } catch (err) {
-    throw `Failed to sign into google ${err}`;
+    throw `Failed to sign into google ${err.response.data}`;
   }
 };
 
